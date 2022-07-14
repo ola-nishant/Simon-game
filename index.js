@@ -130,3 +130,18 @@ $("button").on("click", function (click) {
   checkAnswer();
   i++;
 });
+
+//TOUCH OPTIMIZATION
+
+document.addEventListener(
+  "touchstart",
+  function () {
+    $("#startGame").hide();
+    level++;
+    $("#levelNumberDeclaration").html("Level " + level);
+    $("#levelNumberDeclaration").show();
+    $(".row").show();
+    nextSequence();
+  },
+  { once: true }
+);
